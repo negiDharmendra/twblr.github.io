@@ -31,7 +31,7 @@ func equals(list1 []string, list2 []string) bool {
 	if len(list1) != len(list2){
 		return false
 	}
-	for i := range newValues {
+	for i := range list1 {
 		if list1[i] != list2[i]{
 			return false
 		}
@@ -40,5 +40,9 @@ func equals(list1 []string, list2 []string) bool {
 }
 
 func partialReverse(src []int, from, to int) []int {
-	return nil
+	newSlice := []int{}
+	for i:=to; i>=from; i-- {
+		newSlice = append(newSlice, src[i])
+	}
+	return newSlice
 }
