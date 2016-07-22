@@ -21,7 +21,10 @@ func filterInts(op filterOperation, vals []int32) []int32 {
 }
 
 func concatenate(dest []string, newValues ...string) []string {
-	return nil
+	for i := range newValues {
+		dest = append(dest,newValues[i])
+	}
+	return dest
 }
 
 func equals(list1 []string, list2 []string) bool {
