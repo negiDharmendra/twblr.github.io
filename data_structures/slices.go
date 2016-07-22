@@ -11,7 +11,13 @@ func mapInts(op mapOperation, vals []int32) []int32 {
 }
 
 func filterInts(op filterOperation, vals []int32) []int32 {
-	return nil
+	result := []int32{}
+	for i := range vals {
+		if op(vals[i])==true {
+			result = append(result,vals[i])
+		}
+	}
+	return result
 }
 
 func concatenate(dest []string, newValues ...string) []string {
