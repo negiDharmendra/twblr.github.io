@@ -1,5 +1,7 @@
 package interfaces
 
+//import "database/sql/driver"
+
 type Shape interface {
 	Area() int
 }
@@ -14,17 +16,17 @@ type Rectangle struct {
 }
 
 type Hybrid struct {
-	square Square
-	rectangle Rectangle
+	square Shape
+	rectangle Shape
 }
 
-func (this *Square) Area() int{
+func (this Square) Area() int{
 	return this.side * this.side
 }
-func (this *Rectangle) Area() int{
+func (this Rectangle) Area() int{
 	return this.length * this.breadth
 }
 
-func (this *Hybrid) Area() int{
+func (this Hybrid) Area() int{
 	return this.square.Area() + this.rectangle.Area()
 }
